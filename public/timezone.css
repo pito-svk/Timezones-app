@@ -1,0 +1,35 @@
+.content {
+    padding: 2%;
+}
+
+.inputZone {
+  position: fixed;
+  top: 8%;
+}
+
+.inputZone input, button {
+    border: none;
+    background: none;
+    outline: 0;
+    font-size: 2em;
+}
+
+.timecity {
+    position: fixed;
+    top: 35%;
+    font-size: 1.5em;
+}
+
+#footer {
+    position: fixed;
+    top: 95%;
+    left: 44%;
+}
+
+.hidden {
+    display: none;
+}
+
+.nonhidden {
+    display: inherit;
+}
