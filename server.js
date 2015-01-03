@@ -19,7 +19,7 @@ var APIs = {
         return host + path;
     },
     geoNames: function(lat, lng) {
-        var username = 'YOUR_USERNAME';
+        var username = 'peterparada';
         var host = 'http://ws.geonames.org';
         var path = '/timezoneJSON?lat=' + lat + '&lng=' + lng + '&username=' + username;
         return host + path;

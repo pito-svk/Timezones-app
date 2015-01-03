@@ -1,36 +1,19 @@
 'use strict';
 
-var app = angular.module('timezoneApp', []);
+var app = angular.module('timezoneApp', [])
 
 // Creates http request and returns UTC offset
-var GetOffset = app.factory('GetOffset', function($q, $http) {
+.factory('GetOffset', function($q, $http) {
     var getOffset = function(city) {
         var deferred = $q.defer();
         var response = {};
 
-        $http.get('/getoffset/' + city)
-          .success(function(data) {
-            if (data.status === 'success') {
-                response = {
-                    status: 'success',
-                    offset: data.offset,
-                    cityName: data.cityName
-                };
-            } else {
-                response = {
-                    status: 'cityNotFound'
-                };
-            };
-            deferred.resolve(response);
-            
-          });
-
-        return deferred.promise;
+        return $http.get('/getoffset/' + city);
     };
     return getOffset;
-});
+})
 
-var timeCtrl = app.controller('TimeCtrl', function($scope, $timeout, GetOffset) {
+.controller('TimeCtrl', function($scope, $timeout, GetOffset) {
 
     // Define static variables
     var black = '#000000';
@@ -46,7 +29,7 @@ var timeCtrl = app.controller('TimeCtrl', function($scope, $timeout, GetOffset) 
 
     $scope.offset = null;
 
-    // When user change city
+    // Call when user change the city
     $scope.changeCity = function() {
 
         $scope.time = { hours:'.', delimeter:'.', minutes:'.' };
@@ -54,7 +37,9 @@ var timeCtrl = app.controller('TimeCtrl', function($scope, $timeout, GetOffset) 
         $scope.firstGray = false;
 
         GetOffset($scope.city.input)
-          .then(function success(data) {
+          .then(function success(response) {
+            var data = response.data;
+
             if (data.status === 'cityNotFound') {
                 $scope.city.input = $scope.city.result;
             } else {
@@ -68,7 +53,7 @@ var timeCtrl = app.controller('TimeCtrl', function($scope, $timeout, GetOffset) 
                 $scope.city.input = cityName;
                 $scope.city.result = cityName;
             };
-          });
+        });
     };
 
     $scope.changeCity();
@@ -117,10 +102,10 @@ var timeCtrl = app.controller('TimeCtrl', function($scope, $timeout, GetOffset) 
         };
     };
     $timeout(getTime, tickInterval);
-});
+})
 
 // Call event when pressing Enter
-app.directive('ngEnter', function () {
+.directive('ngEnter', function () {
     return function (scope, element, attrs) {
         element.bind("keydown keypress", function (event) {
             if(event.which === 13) {
