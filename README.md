@@ -1,13 +1,12 @@
-Timezones simple app
+Timezones app
 ==============
-==============
-Live demo: <a href="http://gettime.heroku.com" target="_blank">gettime.heroku.com</a>
+Live demo: <a href="https://gettime.heroku.com" target="_blank">gettime.heroku.com</a>
 --------------
 Gallery
 --------------
-<a href="public/images/1.png"><img src="public/images/1.png" height="115px"></a>
-<a href="public/images/1.png"><img src="public/images/2.png" height="115px"></a>
-<a href="public/images/1.png"><img src="public/images/3.png" height="115px"></a>
+<a href="public/images/1.png"><img src="public/images/1.png" height="119px"></a>
+<a href="public/images/1.png"><img src="public/images/2.png" height="119px"></a>
+<a href="public/images/1.png"><img src="public/images/3.png" height="119px"></a>
 
 LICENSE
 --------------
