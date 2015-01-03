@@ -77,15 +77,20 @@ var app = angular.module('timezoneApp', [])
         var ISOPeriod = ISOHours < 12 ? 'AM' : 'PM';
 
         var hours = ISOHours + ($scope.offset | 0);
-        var minutes = ISOMinutes + (($scope.offset % 1) * (-60));
+        var minutes = ISOMinutes + (($scope.offset % 1) * (60));
 
-        var period = (hours >= 0 || hours < 12) ? 'AM' : 'PM';
+        var period = (hours >= 0 && hours < 12) ? 'AM' : 'PM';
         
         if (hours <= 0) {
             hours += 12;
         } else if (hours > 12) {
             hours -= 12;
-        } 
+        };
+
+        if (minutes >= 60) {
+            minutes -= 60;
+            hours += 1;
+        };
 
         $scope.time.hours = hours;
         $scope.time.delimeter = ':';
@@ -116,4 +121,10 @@ var app = angular.module('timezoneApp', [])
             }
         });
     };
+})
+
+.filter('time', function () {
+    return function(n){
+        return (n < 10) ? '0' + n : n
+    }
 });

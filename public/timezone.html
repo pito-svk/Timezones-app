@@ -12,7 +12,7 @@
         <input ng-model="city.input" ng-enter="changeCity()" autofocus></input>
     </div>
         <div class="timecity {{content}}">   
-        <h1>{{city.result}} has <span>{{time.hours}}</span><span style='color:{{delimeterColor}}'>{{time.delimeter}}</span><span>{{time.minutes}}</span> {{time.period}} </h1>
+        <h1>{{ city.result }} has <span>{{ time.hours | time  }}</span><span style='color:{{delimeterColor}}'>{{ time.delimeter }}</span><span>{{ time.minutes | time }}</span> {{ time.period }} </h1>
     </div>
     </div>  
     <div id="footer">
