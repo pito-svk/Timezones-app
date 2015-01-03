@@ -1,6 +1,6 @@
 Timezones app
 ==============
-Live demo: <a href="https://gettime.heroku.com" target="_blank">gettime.heroku.com</a>
+Live demo: <a href="https://gettime.herokuapp.com" target="_blank">gettime.heroku.com</a>
 --------------
 Gallery
 --------------
