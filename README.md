@@ -4,9 +4,9 @@ Live demo: <a href="https://gettime.herokuapp.com" target="_blank">gettime.herok
 --------------
 Gallery
 --------------
-<a href="public/images/1.png"><img src="public/images/1.png" height="119px"></a>
-<a href="public/images/1.png"><img src="public/images/2.png" height="119px"></a>
-<a href="public/images/1.png"><img src="public/images/3.png" height="119px"></a>
+<a href="public/images/1.png"><img src="public/images/1.png" height="118px"></a>
+<a href="public/images/1.png"><img src="public/images/2.png" height="118px"></a>
+<a href="public/images/1.png"><img src="public/images/3.png" height="118px"></a>
 
 LICENSE
 --------------
