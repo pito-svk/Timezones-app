@@ -5,9 +5,6 @@ var app = angular.module('timezoneApp', [])
 // Creates http request and returns UTC offset
 .factory('GetOffset', function ($q, $http) {
   var getOffset = function (city) {
-    var deferred = $q.defer()
-    var response = {}
-
     return $http.get('/getoffset/' + city)
   }
   return getOffset
@@ -71,7 +68,6 @@ var app = angular.module('timezoneApp', [])
     var ISOTime = getISOTime()
     var ISOHours = ISOTime.hours
     var ISOMinutes = ISOTime.minutes
-    var ISOPeriod = ISOHours < 12 ? 'AM' : 'PM'
 
     var hours = ISOHours + ($scope.offset | 0)
     var minutes = ISOMinutes + (($scope.offset % 1) * (60))
