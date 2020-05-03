@@ -8,9 +8,9 @@
     "url": "git@github.com:pito-svk/Timezones-app.git"
   },
   "dependencies": {
+    "ejs": "^3.1.2",
     "express": "^4.10.6",
-    "ejs": "^1.0.0",
-    "requestify": "^0.1.16"
+    "requestify": "^0.2.5"
   },
   "author": "Peter Parada",
   "license": "MIT",
