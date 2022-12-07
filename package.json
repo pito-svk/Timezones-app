@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "ejs": "^3.1.2",
-    "express": "^4.10.6",
+    "express": "^4.18.2",
     "requestify": "^0.2.5"
   },
   "author": "Peter Parada",
